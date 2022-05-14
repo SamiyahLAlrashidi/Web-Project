@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the top navigation bar */
+.topnav { 
+  overflow: hidden;
+  background-color: #1F5272;
+    height: 45px;
+
+}
+
+/* Style the topnav links */
+.topnav a { 
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 11px 16px;
+  text-decoration: none;
+}
+
+.IAUlogo
+{   width:190px ;
+    height:35px ;
+    vertical-align:middle;
+    margin:5px 10px;}
+
+.home_icon 
+{   width:18px ;
+    height:15px ;
+    vertical-align:middle;
+
+}
+
+
+.fl_left, .imgl{float:left;}*
+.fl_right, .imgr{float:right;}*
+
+
+/* Style the content */
+.content {
+  background-color: #1F5272;
+  padding: 10px;
+  height:760px; /* Should be removed. Only for demonstration */
+}
+
+.style_h3
+{
+    font-size: 40px;
+    color: aliceblue;
+    text-align: center;
+    margin-top: 120px;
+    font-family: Arial;
+}
+
+header
+{
+   padding: 3px;
+}
+
+.Admin_table
+{
+      border-radius: 5px;
+      width: 15em;
+      height: 15em;   
+}
+
+h5
+{
+    text-align: center;
+}
+
+
+
+.Admin_table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 1px;
+    border-color: grey;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+button
+{
+      border-radius: 5px;
+      width: 15em;
+      height: 15em; 
+    
+}
+
+
+
+.home_icon
+{   width:18px ;
+    height:15px ;
+    vertical-align:middle;
+
+}
+
+
+
+

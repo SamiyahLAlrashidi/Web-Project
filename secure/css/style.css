@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #1F5272;
+    height: 45px;
+
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 11px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}*/
+
+/* Style the content */
+.content {
+  background-color: #1F5272;
+  padding: 10px;
+  height:760px; /* Should be removed. Only for demonstration */
+}
+
+.style_h3
+{
+    font-size: 40px;
+    color: aliceblue;
+    text-align: center;
+    margin-top: 120px;
+    font-family: Times New Roman;
+}
+
+header
+{
+   padding: 3px;
+}
+
+button
+{
+      border-radius: 5px;
+      width: 15em;
+      height: 15em;
+}
+
+h5
+{
+    text-align: center;
+}
+
+
+.center {
+margin:auto;
+width: 65%;
+border: 0px solid #274162;
+padding: 20px;
+background-image: linear-gradient(#27416, #f3f3e9);
+align-content: center;
+align-items: center;
+text-align: center;
+background-color: #1F5272;
+margin-top: 40px;
+}
+
+fieldset {
+  background-color: #f3f3e9;
+  width:700px;
+  margin: auto;
+  text-align: center;
+}
+
+legend {
+  background-color:  #274162;
+  color: white;
+  padding: 5px 10px;
+  font-family: Times New Roman;
+  position:absolute;
+  left: 500px;
+  top: 100px;
+
+}
+
+label {
+    color:  #274162;
+    font-weight: bold;
+    font-size: 18px;
+    width: 150px;
+    text-align: left;
+    float: left;
+    font-family:Times New Roman;
+
+
+}
+
+select
+{
+    margin-left: 220px;
+    width: 300px;
+
+}
+
+fieldset input {
+  width: inherit;
+  display: block;
+  margin-top: 20px;
+  width: 300px;
+ text-align: left;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+.search
+{
+    width:70px;
+    height: 20px;
+    margin-left: 145px;
+}
+
+.stu_img
+{
+    width:65px ;
+    height:50px ;
+    vertical-align:text-bottom;
+    margin:45px 20px;
+
+}
+
+.IAUlogo
+{   width:190px ;
+    height:35px ;
+    vertical-align:middle;
+    margin:5px 10px;}
+
+.home_icon
+{   width:18px ;
+    height:15px ;
+    vertical-align:middle;
+
+}
+
+
+.fl_left, .imgl{float:left;}
+.fl_right, .imgr{float:right;}

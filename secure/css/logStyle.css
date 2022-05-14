@@ -1,0 +1,60 @@
+
+  * {
+box-sizing: border-box;
+margin:0px;
+padding: 0px;
+}
+
+body, html {
+  height: 100%;
+  font-family: arial;
+  letter-spacing: 1px;
+}
+
+.ad-panner,.login {
+float: left;
+padding: 20px;
+width: 50%;
+min-height: 100vh;
+background: #f3f3e9;
+height: 300px; /* only for demonstration, should be removed */
+}
+.ad-panner{
+background-image: url(images/ads.jpg);
+background-position: right;
+background-size:cover;
+}
+
+.iaulogo{
+width: 100%;
+min-width: 200px;
+margin-bottom: 50px;
+margin-top: 25px;
+}
+
+/* Clear floats after the columns */
+section::after {
+content: "";
+display: table;
+clear: both;
+}
+.forgetPass, .usernameGroup , .passwordGroup , .forgetPass{
+margin:20px;
+}
+.forgetPass{
+font-size: 12px;
+}
+h2{
+color: #274162;
+font-weight: normal;
+margin-bottom: 25px;
+font-size: 1.5em;
+text-transform: uppercase;
+font-weight: bold;
+}
+@media (max-width: 600px) {
+.ad-panner, .login  {
+  width: 100%;
+  height: auto;
+}
+}

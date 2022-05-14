@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.IAUlogo
+{   width:190px ;
+    height:35px ;
+    vertical-align:middle;
+    margin:5px 10px;}
+
+.home_icon
+{   width:18px ;
+    height:15px ;
+    vertical-align:middle;
+
+}
+
+
+.fl_left, .imgl{float:left;}
+.fl_right, .imgr{float:right;}
+
+
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #1F5272;
+    height: 45px;
+
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 11px 16px;
+  text-decoration: none;
+}
+
+
+/* Style the content */
+.content {
+  background-color: #1F5272;
+  padding: 10px;
+  height:760px; /* Should be removed. Only for demonstration */
+}
+
+header
+{
+   padding: 3px;
+}
+
+
+.center {
+margin:auto;
+width: 65%;
+border: 0px solid #274162;
+padding: 20px;
+background-image: linear-gradient(#27416, #f3f3e9);
+align-content: center;  
+align-items: center;
+text-align: center; 
+background-color: #1F5272;
+margin-top: 40px;
+}
+
+
+
+fieldset {
+  background-color: #f3f3e9;
+  width:700px;
+  margin: auto;
+  text-align: center;
+
+}
+
+legend {
+  background-color:  #274162;
+  color: white;
+  padding: 5px 10px;
+  font-family: Arial;
+  position:absolute;
+  left: 500px;
+  top: 97px;
+      
+}
+
+label { 
+    color:  #274162; 
+    font-weight: bold; 
+    font-size: 18px; 
+    float: left; 
+    margin-left: auto;
+    font-family:Arial;
+    
+
+} 
+
+fieldset input {
+  width: inherit; 
+  display: block; 
+  margin-left: auto;
+  width: 300px;
+  text-align: left;
+  margin-top: 3px;
+
+} 
+
+select
+{
+    margin-left: 249px;
+    width: 300px;
+    
+}
+
+
+
+.search
+{
+    width:70px;
+    height: 20px;
+    margin-left: 210px;
+}
+
+.table_Grade ,th,td
+{
+    border:1px solid #1F5272 ;
+    border-color: #1F5272;
+    width:100%;
+    border-collapse: collapse;
+    border-width: 2px;
+    table-layout:fixed;
+    font-family: Arial;
+    
+}
+
