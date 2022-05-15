@@ -18,10 +18,14 @@ if (isset($_POST['submit'])){
   $postal_code=mysqli_real_escape_string($conn, $_POST['postal_code']);
   $add=mysqli_real_escape_string($conn, $_POST['add']);
   $pass = mysqli_real_escape_string($conn, $_POST['pass']);
-/// add password and address
-  $query = "INSERT INTO students (national_id, postal_code , address, city,country, DOB ,phone_num ,gender,  name, p_email , high_school , u_email , gpa , pass, id ) VALUES ('$national_id', '$postal_code' , '$add', '$city','$country', '$birthday' ,'$phone' ,'$gender',  '$name', '$email' ,
-    '$school_grade' , NULL , NULL , '$pass', NULL ) " ;
-  if (mysqli_query($conn,$query)){
+  $pass = hash('sha256', $pass);
+ $null = NULL;
+  $query = "INSERT INTO students (national_id, postal_code , address, city,country, DOB ,phone_num ,gender,  name, p_email , high_school , u_email , gpa , pass ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+
+
+  if ($stmt= $conn->prepare($query)){
+    $stmt->bind_param("ssssssssssssss", $national_id ,  $postal_code  ,  $add ,  $city , $country ,  $birthday  , $phone  , $gender ,   $name ,  $email  , $school_grade  ,$null,  $null  ,  $pass );
+    $stmt->execute();
     mysqli_query($conn, "UPDATE students SET u_email = CONCAT(id, '@iau.edu.sa');");
     echo '<script type="text/javascript">alert("Registartion Succseed ") </script>';
 
@@ -29,14 +33,15 @@ if (isset($_POST['submit'])){
 
   }
   else {
-     echo '<script type="text/javascript">alert("Registartion Failed , Complete information please ") </script>';
+     echo '<script type="text/javascript">alert("Registartion Failed , Try again please") </script>';
 
-    echo "Error".mysqli_error($conn);
+
   }
 }
 }
 catch(Exception $e) {
   echo "Error occure in server side try again ";
+  echo "Error".mysqli_error($conn);
 }
 
 
@@ -138,14 +143,16 @@ catch(Exception $e) {
            document.reg.name.focus();
            return false;
          }
-         if (document.reg.email.value=="") {
-              error = "Email Must Entered ! ";
+         var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+         if (document.reg.email.value=="" || document.reg.email.value.match(mailformat)===null) {
+              error = "Email Entered Must Be Valid! ";
                document.reg.email.focus();
                document.getElementById("error").innerHTML=error;
                return false;
          }
-         if (document.reg.national_id.value=="") {
-              error = "National ID Must Entered ! ";
+         if (document.reg.national_id.value=="" ||document.reg.national_id.value.length!=10
+         || document.reg.national_id.value.match(/\d{10}/)===null) {
+              error = "National ID Must Entered with length of 10 number! ";
                document.reg.national_id.focus();
                document.getElementById("error").innerHTML=error;
                return false;
@@ -156,8 +163,12 @@ catch(Exception $e) {
                document.getElementById("error").innerHTML=error;
                return false;
          }
-         if (document.reg.birthday.value=="") {
-              error = "Birthday Must Entered ! ";
+         const d = new Date();
+	 t = parseInt(document.reg.birthday.value.substring(0, 4));
+
+
+         if (document.reg.birthday.value=="" ||  d.getFullYear()-17 <= t ) {
+              error = "Birthday Entered Must be Valid, Note no one under 18 accepted! ";
                document.reg.birthday.focus();
                document.getElementById("error").innerHTML=error;
                return false;
@@ -198,8 +209,9 @@ catch(Exception $e) {
                document.getElementById("error").innerHTML=error;
                return false;
          }
-         if (document.reg.pass.value=="") {
-              error = "Password Must Entered ! ";
+         patt =/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+         if (document.reg.pass.value=="" ||document.reg.pass.value.match(patt)===null ) {
+              error = "Password Must be \n(1) Capital Letter - \n(8) Minimum Length \n(1)Special character ! ";
                document.reg.pass.focus();
                document.getElementById("error").innerHTML=error;
                return false;
@@ -217,7 +229,7 @@ catch(Exception $e) {
                return false;
          }
           var m = document.reg.phone.value;
-      
+      //    alert(m);
          if (m.match(/05\d{8}/)===null) {
               error = "Phone Number Must Be Formatted As 05X XXX XXXX! ";
                document.reg.phone.focus();
@@ -227,6 +239,24 @@ catch(Exception $e) {
 
 
 
+         // if (document.reg.add.value=="") {
+         //      error = "Address Must Entered ! ";
+         //       document.reg.add.focus();
+         //       document.getElementById("error").innerHTML=error;
+         //       return false;
+         // }
+         // if (document.reg.add.value=="") {
+         //      error = "Address Must Entered ! ";
+         //       document.reg.add.focus();
+         //       document.getElementById("error").innerHTML=error;
+         //       return false;
+         // }
+         // if (document.reg.add.value=="") {
+         //      error = "Address Must Entered ! ";
+         //       document.reg.add.focus();
+         //       document.getElementById("error").innerHTML=error;
+         //       return false;
+         // }
        }
     </script>
 
@@ -236,7 +266,7 @@ catch(Exception $e) {
       </div>
       <div class="login">
 
-        <img src="../images/logo.svg" class="iaulogo" alt="">
+   <a href="http://localhost:8000/">      <img src="../images/logo.svg" class="iaulogo" alt=""></a>
 
                 <div class="card card-4">
                     <div class="card-body">
