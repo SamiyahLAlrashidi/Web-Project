@@ -239,24 +239,7 @@ catch(Exception $e) {
 
 
 
-         // if (document.reg.add.value=="") {
-         //      error = "Address Must Entered ! ";
-         //       document.reg.add.focus();
-         //       document.getElementById("error").innerHTML=error;
-         //       return false;
-         // }
-         // if (document.reg.add.value=="") {
-         //      error = "Address Must Entered ! ";
-         //       document.reg.add.focus();
-         //       document.getElementById("error").innerHTML=error;
-         //       return false;
-         // }
-         // if (document.reg.add.value=="") {
-         //      error = "Address Must Entered ! ";
-         //       document.reg.add.focus();
-         //       document.getElementById("error").innerHTML=error;
-         //       return false;
-         // }
+      
        }
     </script>
 
